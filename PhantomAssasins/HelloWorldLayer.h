@@ -12,8 +12,13 @@
 // When you import this file, you import all the cocos2d classes
 #import "cocos2d.h"
 
+int _monstersDestroyed;
+int _totalLives;
+int _gold;
+
+
 // HelloWorldLayer
-@interface HelloWorldLayer : CCLayer <GKAchievementViewControllerDelegate, GKLeaderboardViewControllerDelegate>
+@interface HelloWorldLayer : CCLayerColor
 {
 }
 
