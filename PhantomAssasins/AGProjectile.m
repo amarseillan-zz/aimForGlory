@@ -6,16 +6,17 @@
 //  Copyright (c) 2013 Agustin Marseillan. All rights reserved.
 //
 
-#import "PAProjectile.h"
-#import "PAMagicProjectile.h"
+#import "AGProjectile.h"
+#import "AGMagicProjectile.h"
 
-@implementation PAProjectile
+@implementation AGProjectile
 
 int _damage;
+BOOL _isSharp;
 
-+(id)initWithMagic:(BOOL)hasMagic{
++(id)initWithMagic:(BOOL)hasMagic isSharp:(BOOL)isSharp{
     if( hasMagic ){
-        return [PAMagicProjectile init];
+        return [AGMagicProjectile init];
     }else{
         if( (self = [super spriteWithFile:@"arrow.png"])){
             _damage = 5;
@@ -26,6 +27,10 @@ int _damage;
 
 -(int)damage{
     return _damage;
+}
+
+-(BOOL)isSharp{
+    return _isSharp;
 }
 
 @end

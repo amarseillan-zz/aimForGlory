@@ -8,10 +8,10 @@
 
 
 // Import the interfaces
-#import "HelloWorldLayer.h"
+#import "MainLoopLayer.h"
 #import "GameOverLayer.h"
-#import "PAMonster.h"
-#import "PAProjectile.h"
+#import "AGMonster.h"
+#import "AGProjectile.h"
 
 // Needed to obtain the Navigation Controller
 #import "AppDelegate.h"
@@ -23,7 +23,7 @@
 #pragma mark - HelloWorldLayer
 
 // HelloWorldLayer implementation
-@implementation HelloWorldLayer
+@implementation MainLoopLayer
 
 NSMutableArray * _monsters;
 NSMutableArray * _projectiles;
@@ -75,7 +75,7 @@ long _time;
 	CCScene *scene = [CCScene node];
 	
 	// 'layer' is an autorelease object.
-	HelloWorldLayer *layer = [HelloWorldLayer node];
+	MainLoopLayer *layer = [MainLoopLayer node];
 	
 	// add layer as a child to scene
 	[scene addChild: layer];
@@ -87,7 +87,7 @@ long _time;
 
 - (void) addMonster {
     
-    PAMonster * monster = [PAMonster initWithHp:_time];
+    AGMonster * monster = [AGMonster initWithHp:_time];
     
     // Determine where to spawn the monster along the Y axis
     CGSize winSize = [CCDirector sharedDirector].winSize;
@@ -159,7 +159,7 @@ long _time;
     
     // Set up initial location of projectile
     CGSize winSize = [[CCDirector sharedDirector] winSize];
-    PAProjectile *projectile = [PAProjectile initWithMagic:((_projectilesFired++%5)==0)];
+    AGProjectile *projectile = [AGProjectile initWithMagic:((_projectilesFired++%5)==0) isSharp:NO];
     projectile.position = ccp(20, winSize.height/2);
     
     // Determine offset of location to projectile
@@ -175,7 +175,7 @@ long _time;
     float ratio = (float) offset.y / (float) offset.x;
     int realY = (realX * ratio) + projectile.position.y;
     CGPoint realDest = ccp(realX, realY);
-    [projectile setRotation:asin(ratio)];
+    //[projectile setRotation:asin(ratio)];
     
     
     // Determine the length of how far you're shooting
@@ -202,21 +202,24 @@ long _time;
 }
 
 - (void)update:(ccTime)dt {
-    
+    BOOL eraseArrow = NO;
     NSMutableArray *projectilesToDelete = [[NSMutableArray alloc] init];
-    for (PAProjectile *projectile in _projectiles) {
+    for (AGProjectile *projectile in _projectiles) {
         
         NSMutableArray *monstersToDelete = [[NSMutableArray alloc] init];
-        for (PAMonster *monster in _monsters) {
+        for (AGMonster *monster in _monsters) {
             
             if (CGRectIntersectsRect(projectile.boundingBox, monster.boundingBox)) {
                 if( [monster getHit:projectile] ){
                     [monstersToDelete addObject:monster];
+                    if( ![projectile isSharp] ){
+                        eraseArrow = YES;
+                    }
                 }
             }
         }
         
-        for (PAMonster *monster in monstersToDelete) {
+        for (AGMonster *monster in monstersToDelete) {
             [_monsters removeObject:monster];
             _gold = _time;
             [self removeChild:monster cleanup:YES];
@@ -228,7 +231,7 @@ long _time;
             }*/
         }
         
-        if (monstersToDelete.count > 0) {
+        if ( eraseArrow ) {
             [projectilesToDelete addObject:projectile];
         }
         [monstersToDelete release];

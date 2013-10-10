@@ -1,5 +1,5 @@
 //
-//  PAMonster.h
+//  PAProjectile.h
 //  PhantomAssasins
 //
 //  Created by Agustin Marseillan on 10/3/13.
@@ -7,15 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "cocos2d.h"
-#import "PAProjectile.h"
+#import "CCSprite.h"
 
-@interface PAMonster : CCSprite
+@interface AGProjectile : CCSprite
 
-+(id) initWithHp:(int)hp;
++(id)initWithMagic:(BOOL)hasMagic isSharp:(BOOL)isSharp;
 
--(int) hp;
+-(int)damage;
 
--(BOOL) getHit:(PAProjectile*)projectile;
+-(BOOL)isSharp;
 
 @end

@@ -6,9 +6,9 @@
 //  Copyright (c) 2013 Agustin Marseillan. All rights reserved.
 //
 
-#import "PAMagicProjectile.h"
+#import "AGMagicProjectile.h"
 
-@implementation PAMagicProjectile
+@implementation AGMagicProjectile
 
 int _damage;
 

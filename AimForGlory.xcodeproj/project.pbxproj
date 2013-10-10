@@ -138,7 +138,7 @@
 		AA82FAF717E27F6600C5123A /* vec4.c in Sources */ = {isa = PBXBuildFile; fileRef = AA82FAF617E27F6600C5123A /* vec4.c */; };
 		AA82FAFC17E27F6600C5123A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AA82FAFB17E27F6600C5123A /* main.m */; };
 		AA82FAFF17E27F6600C5123A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AA82FAFE17E27F6600C5123A /* AppDelegate.m */; };
-		AA82FB0217E27F6600C5123A /* HelloWorldLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = AA82FB0117E27F6600C5123A /* HelloWorldLayer.m */; };
+		AA82FB0217E27F6600C5123A /* MainLoopLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = AA82FB0117E27F6600C5123A /* MainLoopLayer.m */; };
 		AA82FB0517E27F6600C5123A /* IntroLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = AA82FB0417E27F6600C5123A /* IntroLayer.m */; };
 		AA82FB1617E2806F00C5123A /* monster-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = AA82FB0D17E2806F00C5123A /* monster-hd.png */; };
 		AA82FB1717E2806F00C5123A /* monster.png in Resources */ = {isa = PBXBuildFile; fileRef = AA82FB0E17E2806F00C5123A /* monster.png */; };
@@ -151,9 +151,9 @@
 		AAE9CC4717FE00E30010D596 /* heartempty-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = AAE9CC4417FE00E30010D596 /* heartempty-hd.png */; };
 		AAE9CC4817FE00E30010D596 /* heartempty.png in Resources */ = {isa = PBXBuildFile; fileRef = AAE9CC4517FE00E30010D596 /* heartempty.png */; };
 		AAE9CC4A17FE02450010D596 /* heart.png in Resources */ = {isa = PBXBuildFile; fileRef = AAE9CC4917FE02450010D596 /* heart.png */; };
-		AAE9CC4D17FE1B920010D596 /* PAMonster.m in Sources */ = {isa = PBXBuildFile; fileRef = AAE9CC4C17FE1B920010D596 /* PAMonster.m */; };
-		AAE9CC5317FE30260010D596 /* PAProjectile.m in Sources */ = {isa = PBXBuildFile; fileRef = AAE9CC5217FE30260010D596 /* PAProjectile.m */; };
-		AAE9CC5617FE31F90010D596 /* PAMagicProjectile.m in Sources */ = {isa = PBXBuildFile; fileRef = AAE9CC5517FE31F80010D596 /* PAMagicProjectile.m */; };
+		AAE9CC4D17FE1B920010D596 /* AGMonster.m in Sources */ = {isa = PBXBuildFile; fileRef = AAE9CC4C17FE1B920010D596 /* AGMonster.m */; };
+		AAE9CC5317FE30260010D596 /* AGProjectile.m in Sources */ = {isa = PBXBuildFile; fileRef = AAE9CC5217FE30260010D596 /* AGProjectile.m */; };
+		AAE9CC5617FE31F90010D596 /* AGMagicProjectile.m in Sources */ = {isa = PBXBuildFile; fileRef = AAE9CC5517FE31F80010D596 /* AGMagicProjectile.m */; };
 		AAE9CC5917FE36C90010D596 /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = AAE9CC5717FE36C90010D596 /* arrow.png */; };
 		AAE9CC5A17FE36C90010D596 /* magic-arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = AAE9CC5817FE36C90010D596 /* magic-arrow.png */; };
 		AAE9CC5C17FE3E060010D596 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = AAE9CC5B17FE3E060010D596 /* icon.png */; };
@@ -162,7 +162,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		AA82F95517E27F6300C5123A /* PhantomAssasins.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhantomAssasins.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA82F95517E27F6300C5123A /* AimForGlory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AimForGlory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA82F95817E27F6300C5123A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		AA82F95A17E27F6300C5123A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		AA82F95C17E27F6300C5123A /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
@@ -438,8 +438,8 @@
 		AA82FAFB17E27F6600C5123A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		AA82FAFD17E27F6600C5123A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		AA82FAFE17E27F6600C5123A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		AA82FB0017E27F6600C5123A /* HelloWorldLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HelloWorldLayer.h; sourceTree = "<group>"; };
-		AA82FB0117E27F6600C5123A /* HelloWorldLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HelloWorldLayer.m; sourceTree = "<group>"; };
+		AA82FB0017E27F6600C5123A /* MainLoopLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainLoopLayer.h; sourceTree = "<group>"; };
+		AA82FB0117E27F6600C5123A /* MainLoopLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainLoopLayer.m; sourceTree = "<group>"; };
 		AA82FB0317E27F6600C5123A /* IntroLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IntroLayer.h; sourceTree = "<group>"; };
 		AA82FB0417E27F6600C5123A /* IntroLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IntroLayer.m; sourceTree = "<group>"; };
 		AA82FB0D17E2806F00C5123A /* monster-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "monster-hd.png"; sourceTree = "<group>"; };
@@ -454,12 +454,12 @@
 		AAE9CC4417FE00E30010D596 /* heartempty-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "heartempty-hd.png"; path = "../../heartempty-hd.png"; sourceTree = "<group>"; };
 		AAE9CC4517FE00E30010D596 /* heartempty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = heartempty.png; path = ../../heartempty.png; sourceTree = "<group>"; };
 		AAE9CC4917FE02450010D596 /* heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = heart.png; path = ../../heart.png; sourceTree = "<group>"; };
-		AAE9CC4B17FE1B920010D596 /* PAMonster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PAMonster.h; sourceTree = "<group>"; };
-		AAE9CC4C17FE1B920010D596 /* PAMonster.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PAMonster.m; sourceTree = "<group>"; };
-		AAE9CC5117FE30250010D596 /* PAProjectile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PAProjectile.h; sourceTree = "<group>"; };
-		AAE9CC5217FE30260010D596 /* PAProjectile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PAProjectile.m; sourceTree = "<group>"; };
-		AAE9CC5417FE31F80010D596 /* PAMagicProjectile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PAMagicProjectile.h; sourceTree = "<group>"; };
-		AAE9CC5517FE31F80010D596 /* PAMagicProjectile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PAMagicProjectile.m; sourceTree = "<group>"; };
+		AAE9CC4B17FE1B920010D596 /* AGMonster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGMonster.h; sourceTree = "<group>"; };
+		AAE9CC4C17FE1B920010D596 /* AGMonster.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGMonster.m; sourceTree = "<group>"; };
+		AAE9CC5117FE30250010D596 /* AGProjectile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGProjectile.h; sourceTree = "<group>"; };
+		AAE9CC5217FE30260010D596 /* AGProjectile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGProjectile.m; sourceTree = "<group>"; };
+		AAE9CC5417FE31F80010D596 /* AGMagicProjectile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGMagicProjectile.h; sourceTree = "<group>"; };
+		AAE9CC5517FE31F80010D596 /* AGMagicProjectile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGMagicProjectile.m; sourceTree = "<group>"; };
 		AAE9CC5717FE36C90010D596 /* arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow.png; sourceTree = "<group>"; };
 		AAE9CC5817FE36C90010D596 /* magic-arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "magic-arrow.png"; sourceTree = "<group>"; };
 		AAE9CC5B17FE3E060010D596 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = ResourcePack/Art/icon.png; sourceTree = "<group>"; };
@@ -491,7 +491,7 @@
 		AA82F94C17E27F6300C5123A = {
 			isa = PBXGroup;
 			children = (
-				AA82F96C17E27F6300C5123A /* PhantomAssasins */,
+				AA82F96C17E27F6300C5123A /* AimForGlory */,
 				AA82F95717E27F6300C5123A /* Frameworks */,
 				AA82F95617E27F6300C5123A /* Products */,
 			);
@@ -500,7 +500,7 @@
 		AA82F95617E27F6300C5123A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AA82F95517E27F6300C5123A /* PhantomAssasins.app */,
+				AA82F95517E27F6300C5123A /* AimForGlory.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -522,27 +522,28 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		AA82F96C17E27F6300C5123A /* PhantomAssasins */ = {
+		AA82F96C17E27F6300C5123A /* AimForGlory */ = {
 			isa = PBXGroup;
 			children = (
-				AAE9CC5417FE31F80010D596 /* PAMagicProjectile.h */,
-				AAE9CC5517FE31F80010D596 /* PAMagicProjectile.m */,
-				AAE9CC5117FE30250010D596 /* PAProjectile.h */,
-				AAE9CC5217FE30260010D596 /* PAProjectile.m */,
-				AAE9CC4B17FE1B920010D596 /* PAMonster.h */,
-				AAE9CC4C17FE1B920010D596 /* PAMonster.m */,
+				AAE9CC5417FE31F80010D596 /* AGMagicProjectile.h */,
+				AAE9CC5517FE31F80010D596 /* AGMagicProjectile.m */,
+				AAE9CC5117FE30250010D596 /* AGProjectile.h */,
+				AAE9CC5217FE30260010D596 /* AGProjectile.m */,
+				AAE9CC4B17FE1B920010D596 /* AGMonster.h */,
+				AAE9CC4C17FE1B920010D596 /* AGMonster.m */,
 				AA82FAFD17E27F6600C5123A /* AppDelegate.h */,
 				AACE25B017EBA3ED00AAFDA1 /* GameOverLayer.h */,
 				AACE25B117EBA3ED00AAFDA1 /* GameOverLayer.m */,
 				AA82FAFE17E27F6600C5123A /* AppDelegate.m */,
-				AA82FB0017E27F6600C5123A /* HelloWorldLayer.h */,
-				AA82FB0117E27F6600C5123A /* HelloWorldLayer.m */,
+				AA82FB0017E27F6600C5123A /* MainLoopLayer.h */,
+				AA82FB0117E27F6600C5123A /* MainLoopLayer.m */,
 				AA82FB0317E27F6600C5123A /* IntroLayer.h */,
 				AA82FB0417E27F6600C5123A /* IntroLayer.m */,
 				AA82F96D17E27F6300C5123A /* Resources */,
 				AA82F98517E27F6300C5123A /* libs */,
 				AA82FAF917E27F6600C5123A /* Supporting Files */,
 			);
+			name = AimForGlory;
 			path = PhantomAssasins;
 			sourceTree = "<group>";
 		};
@@ -968,9 +969,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		AA82F95417E27F6300C5123A /* PhantomAssasins */ = {
+		AA82F95417E27F6300C5123A /* AimForGlory */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AA82FB0817E27F6600C5123A /* Build configuration list for PBXNativeTarget "PhantomAssasins" */;
+			buildConfigurationList = AA82FB0817E27F6600C5123A /* Build configuration list for PBXNativeTarget "AimForGlory" */;
 			buildPhases = (
 				AA82F95117E27F6300C5123A /* Sources */,
 				AA82F95217E27F6300C5123A /* Frameworks */,
@@ -980,9 +981,9 @@
 			);
 			dependencies = (
 			);
-			name = PhantomAssasins;
+			name = AimForGlory;
 			productName = PhantomAssasins;
-			productReference = AA82F95517E27F6300C5123A /* PhantomAssasins.app */;
+			productReference = AA82F95517E27F6300C5123A /* AimForGlory.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -994,7 +995,7 @@
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "Agustin Marseillan";
 			};
-			buildConfigurationList = AA82F95017E27F6300C5123A /* Build configuration list for PBXProject "PhantomAssasins" */;
+			buildConfigurationList = AA82F95017E27F6300C5123A /* Build configuration list for PBXProject "AimForGlory" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -1006,7 +1007,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				AA82F95417E27F6300C5123A /* PhantomAssasins */,
+				AA82F95417E27F6300C5123A /* AimForGlory */,
 			);
 		};
 /* End PBXProject section */
@@ -1162,12 +1163,12 @@
 				AA82FAF717E27F6600C5123A /* vec4.c in Sources */,
 				AA82FAFC17E27F6600C5123A /* main.m in Sources */,
 				AA82FAFF17E27F6600C5123A /* AppDelegate.m in Sources */,
-				AA82FB0217E27F6600C5123A /* HelloWorldLayer.m in Sources */,
+				AA82FB0217E27F6600C5123A /* MainLoopLayer.m in Sources */,
 				AA82FB0517E27F6600C5123A /* IntroLayer.m in Sources */,
 				AACE25B217EBA3ED00AAFDA1 /* GameOverLayer.m in Sources */,
-				AAE9CC4D17FE1B920010D596 /* PAMonster.m in Sources */,
-				AAE9CC5317FE30260010D596 /* PAProjectile.m in Sources */,
-				AAE9CC5617FE31F90010D596 /* PAMagicProjectile.m in Sources */,
+				AAE9CC4D17FE1B920010D596 /* AGMonster.m in Sources */,
+				AAE9CC5317FE30260010D596 /* AGProjectile.m in Sources */,
+				AAE9CC5617FE31F90010D596 /* AGMagicProjectile.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1229,7 +1230,7 @@
 					"-lsqlite3",
 					"-ObjC",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = AimForGlory;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1248,7 +1249,7 @@
 					"-lsqlite3",
 					"-ObjC",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = AimForGlory;
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
 			};
@@ -1257,7 +1258,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		AA82F95017E27F6300C5123A /* Build configuration list for PBXProject "PhantomAssasins" */ = {
+		AA82F95017E27F6300C5123A /* Build configuration list for PBXProject "AimForGlory" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AA82FB0617E27F6600C5123A /* Debug */,
@@ -1266,7 +1267,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AA82FB0817E27F6600C5123A /* Build configuration list for PBXNativeTarget "PhantomAssasins" */ = {
+		AA82FB0817E27F6600C5123A /* Build configuration list for PBXNativeTarget "AimForGlory" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AA82FB0917E27F6600C5123A /* Debug */,

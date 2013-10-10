@@ -1,5 +1,5 @@
 //
-//  PAProjectile.h
+//  PAMagicProjectile.h
 //  PhantomAssasins
 //
 //  Created by Agustin Marseillan on 10/3/13.
@@ -7,12 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "CCSprite.h"
+#import "AGProjectile.h"
 
-@interface PAProjectile : CCSprite
+@interface AGMagicProjectile : AGProjectile
 
-+(id)initWithMagic:(BOOL)hasMagic;
-
--(int)damage;
++(id)init;
 
 @end

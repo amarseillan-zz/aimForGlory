@@ -18,7 +18,7 @@ int _gold;
 
 
 // HelloWorldLayer
-@interface HelloWorldLayer : CCLayerColor
+@interface MainLoopLayer : CCLayerColor
 {
 }
 

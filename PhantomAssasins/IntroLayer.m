@@ -9,7 +9,7 @@
 
 // Import the interfaces
 #import "IntroLayer.h"
-#import "HelloWorldLayer.h"
+#import "MainLoopLayer.h"
 
 
 #pragma mark - IntroLayer
@@ -61,6 +61,6 @@
 -(void) onEnter
 {
 	[super onEnter];
-	[[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[HelloWorldLayer scene] ]];
+	[[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[MainLoopLayer scene] ]];
 }
 @end

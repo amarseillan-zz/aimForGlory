@@ -6,9 +6,9 @@
 //  Copyright (c) 2013 Agustin Marseillan. All rights reserved.
 //
 
-#import "PAMonster.h"
+#import "AGMonster.h"
 
-@implementation PAMonster
+@implementation AGMonster
 
 int _hp;
 
@@ -24,7 +24,7 @@ int _hp;
     return _hp;
 }
 
--(BOOL) getHit:(PAProjectile*)projectile{
+-(BOOL) getHit:(AGProjectile*)projectile{
     _hp -= [projectile damage];
     return _hp <= 0;
 }
