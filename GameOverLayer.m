@@ -11,21 +11,21 @@
 
 @implementation GameOverLayer
 
-+(CCScene *) sceneWithWon:(BOOL)won gold:(int)gold{
++(CCScene *) sceneWithWon:(BOOL)won status:(AGGameStatus*)status{
     CCScene *scene = [CCScene node];
-    GameOverLayer *layer = [[[GameOverLayer alloc] initWithWon:won gold:gold] autorelease];
+    GameOverLayer *layer = [[[GameOverLayer alloc] initWithWon:won status:status] autorelease];
     [scene addChild: layer];
     return scene;
 }
 
-- (id)initWithWon:(BOOL)won gold:(int)gold{
+- (id)initWithWon:(BOOL)won status:(AGGameStatus*)status{
     if ((self = [super initWithColor:ccc4(255, 255, 255, 255)])) {
         
         NSString * message;
         if (won) {
             message = @"You Won!";
         } else {
-            message = [NSString stringWithFormat:@"You Lose :[, won %d gold", gold];
+            message = [NSString stringWithFormat:@"You Lose :[, won %d gold", status.gold];
         }
         
         CGSize winSize = [[CCDirector sharedDirector] winSize];
@@ -38,7 +38,7 @@
          [CCSequence actions:
           [CCDelayTime actionWithDuration:3],
           [CCCallBlockN actionWithBlock:^(CCNode *node) {
-             [[CCDirector sharedDirector] replaceScene:[MainLoopLayer scene]];
+             [[CCDirector sharedDirector] replaceScene:[MainLoopLayer scene:status]];
          }],
           nil]];
     }

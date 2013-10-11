@@ -61,6 +61,10 @@
 -(void) onEnter
 {
 	[super onEnter];
-	[[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[MainLoopLayer scene] ]];
+    AGGameStatus *gameStatus = [[AGGameStatus alloc] init];
+    gameStatus.gold = 0;
+    gameStatus.buffs = 0;
+    gameStatus.level = 0;
+	[[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[MainLoopLayer scene:gameStatus] ]];
 }
 @end

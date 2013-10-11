@@ -16,6 +16,8 @@
 
 -(int) hp;
 
+-(int) maxHp;
+
 -(BOOL) getHit:(AGProjectile*)projectile;
 
 @end

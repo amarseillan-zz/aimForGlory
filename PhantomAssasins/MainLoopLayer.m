@@ -12,6 +12,7 @@
 #import "GameOverLayer.h"
 #import "AGMonster.h"
 #import "AGProjectile.h"
+#import "GoldLayer.h"
 
 // Needed to obtain the Navigation Controller
 #import "AppDelegate.h"
@@ -28,23 +29,28 @@
 NSMutableArray * _monsters;
 NSMutableArray * _projectiles;
 NSMutableArray * _lives;
+GoldLayer * _goldLayer;
 int _projectilesFired;
 long _time;
+AGGameStatus* _gameStatus;
 
 
 
 // on "init" you need to initialize your instance
-- (id) init
+- (id) initWithStatus:(AGGameStatus*)gameStatus
 {
     if ((self = [super initWithColor:ccc4(255,255,255,255)])) {
         _monsters = [[NSMutableArray alloc] init];
         _projectiles = [[NSMutableArray alloc] init];
         _monstersDestroyed = 0;
         _lives = [[NSMutableArray alloc] init];
-        _gold = 0;
         _projectilesFired = 0;
         _time = 0;
+        _gameStatus = gameStatus;
+        _gold = gameStatus.gold;
         CGSize winSize = [CCDirector sharedDirector].winSize;
+        GoldLayer* goldLayer = [[GoldLayer alloc] initWithGold:_gold];
+        _goldLayer = goldLayer;
         
         int i = 0;
         for( i=0; i<3; i++ ){
@@ -56,6 +62,7 @@ long _time;
         _totalLives = 3;
         CCSprite *player = [CCSprite spriteWithFile:@"player.png"];
         player.position = ccp(player.contentSize.width/2, winSize.height/2);
+        [self addChild:_goldLayer];
         [self addChild:player];
         [self addChild:_lives[0]];
         [self addChild:_lives[1]];
@@ -69,13 +76,13 @@ long _time;
 }
 
 // Helper class method that creates a Scene with the HelloWorldLayer as the only child.
-+(CCScene *) scene
++(CCScene *) scene:(AGGameStatus*)gameStatus
 {
 	// 'scene' is an autorelease object.
 	CCScene *scene = [CCScene node];
 	
 	// 'layer' is an autorelease object.
-	MainLoopLayer *layer = [MainLoopLayer node];
+	MainLoopLayer *layer = [[MainLoopLayer alloc] initWithStatus:gameStatus];
 	
 	// add layer as a child to scene
 	[scene addChild: layer];
@@ -87,7 +94,7 @@ long _time;
 
 - (void) addMonster {
     
-    AGMonster * monster = [AGMonster initWithHp:_time];
+    AGMonster * monster = [AGMonster initWithHp:(_time/14)];
     
     // Determine where to spawn the monster along the Y axis
     CGSize winSize = [CCDirector sharedDirector].winSize;
@@ -116,7 +123,8 @@ long _time;
         CCTexture2D* tex = [[CCTextureCache sharedTextureCache] addImage:@"heartempty.png"];
         [_lives[_totalLives] setTexture:tex];
         if( _totalLives <= 0 ){
-            CCScene *gameOverScene = [GameOverLayer sceneWithWon:NO gold:_gold];
+            _gameStatus.gold = _gold;
+            CCScene *gameOverScene = [GameOverLayer sceneWithWon:NO status:_gameStatus];
             [[CCDirector sharedDirector] replaceScene:gameOverScene];
         }
         [_monsters removeObject:node];
@@ -202,9 +210,10 @@ long _time;
 }
 
 - (void)update:(ccTime)dt {
-    BOOL eraseArrow = NO;
+    
     NSMutableArray *projectilesToDelete = [[NSMutableArray alloc] init];
     for (AGProjectile *projectile in _projectiles) {
+        BOOL eraseArrow = NO;
         
         NSMutableArray *monstersToDelete = [[NSMutableArray alloc] init];
         for (AGMonster *monster in _monsters) {
@@ -212,16 +221,16 @@ long _time;
             if (CGRectIntersectsRect(projectile.boundingBox, monster.boundingBox)) {
                 if( [monster getHit:projectile] ){
                     [monstersToDelete addObject:monster];
-                    if( ![projectile isSharp] ){
-                        eraseArrow = YES;
-                    }
+                }
+                if( ![projectile isSharp] ){
+                    eraseArrow = YES;
                 }
             }
         }
         
         for (AGMonster *monster in monstersToDelete) {
             [_monsters removeObject:monster];
-            _gold = _time;
+            _gold += [monster maxHp];
             [self removeChild:monster cleanup:YES];
             _monstersDestroyed++;
             //winning condition...
@@ -242,6 +251,8 @@ long _time;
         [self removeChild:projectile cleanup:YES];
     }
     [projectilesToDelete release];
+    
+    [_goldLayer updateWithGold:_gold];
 }
 
 

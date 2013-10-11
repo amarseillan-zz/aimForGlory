@@ -7,10 +7,11 @@
 //
 
 #import "cocos2d.h"
+#import "AGGameStatus.h"
 
 @interface GameOverLayer : CCLayerColor
 
-+(CCScene *) sceneWithWon:(BOOL)won gold:(int)gold;
-- (id)initWithWon:(BOOL)won gold:(int)gold;
++(CCScene *) sceneWithWon:(BOOL)won status:(AGGameStatus*)status;
+- (id)initWithWon:(BOOL)won status:(AGGameStatus*)status;
 
 @end

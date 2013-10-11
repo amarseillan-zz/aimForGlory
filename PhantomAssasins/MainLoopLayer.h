@@ -11,6 +11,7 @@
 
 // When you import this file, you import all the cocos2d classes
 #import "cocos2d.h"
+#import "AGGameStatus.h"
 
 int _monstersDestroyed;
 int _totalLives;
@@ -23,6 +24,6 @@ int _gold;
 }
 
 // returns a CCScene that contains the HelloWorldLayer as the only child
-+(CCScene *) scene;
++(CCScene *) scene:(AGGameStatus*)gameStatus;
 
 @end

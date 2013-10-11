@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA5B6E0018076EAB00C05823 /* coin.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AA5B6DFF18076EAB00C05823 /* coin.jpg */; };
+		AA5B6E0318076F9F00C05823 /* GoldLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = AA5B6E0218076F9F00C05823 /* GoldLayer.m */; };
+		AA5B6E06180777BA00C05823 /* AGGameStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = AA5B6E05180777BA00C05823 /* AGGameStatus.m */; };
 		AA82F95917E27F6300C5123A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA82F95817E27F6300C5123A /* QuartzCore.framework */; };
 		AA82F95B17E27F6300C5123A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA82F95A17E27F6300C5123A /* OpenGLES.framework */; };
 		AA82F95D17E27F6300C5123A /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA82F95C17E27F6300C5123A /* OpenAL.framework */; };
@@ -162,6 +165,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AA5B6DFF18076EAB00C05823 /* coin.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = coin.jpg; sourceTree = "<group>"; };
+		AA5B6E0118076F9F00C05823 /* GoldLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoldLayer.h; sourceTree = "<group>"; };
+		AA5B6E0218076F9F00C05823 /* GoldLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoldLayer.m; sourceTree = "<group>"; };
+		AA5B6E04180777B900C05823 /* AGGameStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGGameStatus.h; sourceTree = "<group>"; };
+		AA5B6E05180777BA00C05823 /* AGGameStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGGameStatus.m; sourceTree = "<group>"; };
 		AA82F95517E27F6300C5123A /* AimForGlory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AimForGlory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA82F95817E27F6300C5123A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		AA82F95A17E27F6300C5123A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -525,6 +533,8 @@
 		AA82F96C17E27F6300C5123A /* AimForGlory */ = {
 			isa = PBXGroup;
 			children = (
+				AA5B6E04180777B900C05823 /* AGGameStatus.h */,
+				AA5B6E05180777BA00C05823 /* AGGameStatus.m */,
 				AAE9CC5417FE31F80010D596 /* AGMagicProjectile.h */,
 				AAE9CC5517FE31F80010D596 /* AGMagicProjectile.m */,
 				AAE9CC5117FE30250010D596 /* AGProjectile.h */,
@@ -539,6 +549,8 @@
 				AA82FB0117E27F6600C5123A /* MainLoopLayer.m */,
 				AA82FB0317E27F6600C5123A /* IntroLayer.h */,
 				AA82FB0417E27F6600C5123A /* IntroLayer.m */,
+				AA5B6E0118076F9F00C05823 /* GoldLayer.h */,
+				AA5B6E0218076F9F00C05823 /* GoldLayer.m */,
 				AA82F96D17E27F6300C5123A /* Resources */,
 				AA82F98517E27F6300C5123A /* libs */,
 				AA82FAF917E27F6600C5123A /* Supporting Files */,
@@ -941,6 +953,7 @@
 		AA82FB0C17E2806F00C5123A /* Art */ = {
 			isa = PBXGroup;
 			children = (
+				AA5B6DFF18076EAB00C05823 /* coin.jpg */,
 				AAE9CC5717FE36C90010D596 /* arrow.png */,
 				AAE9CC5817FE36C90010D596 /* magic-arrow.png */,
 				AAE9CC4317FE00E30010D596 /* heart-hd.png */,
@@ -1043,6 +1056,7 @@
 				AAE9CC5C17FE3E060010D596 /* icon.png in Resources */,
 				AAE9CC6517FE47F90010D596 /* background-music-aac.caf in Resources */,
 				AAE9CC6617FE47F90010D596 /* pew-pew-lei.caf in Resources */,
+				AA5B6E0018076EAB00C05823 /* coin.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1169,6 +1183,8 @@
 				AAE9CC4D17FE1B920010D596 /* AGMonster.m in Sources */,
 				AAE9CC5317FE30260010D596 /* AGProjectile.m in Sources */,
 				AAE9CC5617FE31F90010D596 /* AGMagicProjectile.m in Sources */,
+				AA5B6E0318076F9F00C05823 /* GoldLayer.m in Sources */,
+				AA5B6E06180777BA00C05823 /* AGGameStatus.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

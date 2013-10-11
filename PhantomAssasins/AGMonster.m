@@ -11,10 +11,12 @@
 @implementation AGMonster
 
 int _hp;
+int _maxHp;
 
 +(id) initWithHp:(int)hp{
     if( (self = [super spriteWithFile:@"monster.png"]) ){
         _hp = hp;
+        _maxHp = hp;
     }
     return self;
 }
@@ -22,6 +24,10 @@ int _hp;
 
 -(int) hp{
     return _hp;
+}
+
+-(int) maxHp{
+    return _maxHp;
 }
 
 -(BOOL) getHit:(AGProjectile*)projectile{
